@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: "Open Sans";
+}
+
+.blog-main-section {
+    font-family: charter;
+}
+.blog-container .blog-header .blog-heading {
+    font-family: bell;
+}
+.animation-container {
+    animation: first-load 300ms ease-in;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+@keyframes first-load {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-container, .half-container-animation {
+    transition: all .4s ease-in-out;
+}
+
+.card-container:hover, .half-container-animation:hover {
+    transform: translate3d(0,-5px,0);
+    box-shadow: 0 52px 74px rgb(0 0 0 / 12%);
+}
+
+.about-description, .contact-contain {
+    transition: all .4s ease-in-out;
+}
+
+.card-container:hover .card .card-content .card-description {
+    transform: translate3d(0,-5px,0);
+}
+
+.half-container-animation:hover .half-container .contact-contain {
+    transform: translate3d(0,-5px,0);
+}
+
+.half-container-animation:hover .half-container .about-description {
+    transform: translate3d(0,-5px,0);
+}
+
+.completed:before {
+    content: "\2714";
+    color: #2cba6c;
+    font-family: 'ETMODULES';
+    margin-right: 10px;
+    margin-left: -25px;
+    font-size: 1.2em;
+    position: relative;
+    top: 4px;
+}
+
+.pending:before {
+    content: "\2610";
+    color: #2cba6c;
+    font-family: 'ETMODULES';
+    margin-right: 10px;
+    margin-left: -25px;
+    font-size: 1.2em;
+    position: relative;
+    height: 100%;
+}
+
+.completed, .pending, .reading-book {
+    margin-left: 25px;
+}
+
+.reading-book:before {
+    content: "\1F4D6";
+    color: #2cba6c;
+    font-family: 'ETMODULES';
+    margin-right: 10px;
+    margin-left: -25px;
+    font-size: 1.2em;
+    position: relative;
+    height: 100%;
+}
+
+.nav-sm-flex-container-ul {
+    overflow: hidden;
+    transition: max-height 1000ms linear;
+    max-height: 0;
+}
+
+.nav-sm-flex-container-ul.active {
+    max-height: 1000px;
+}

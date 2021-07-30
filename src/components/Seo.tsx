@@ -1,27 +1,27 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+interface SEOPropType {
+  description?: string;
+  lang?: string;
+  meta?: string[];
+  title: string;
+}
+
+const Seo:React.FC<SEOPropType> = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
+                    author
+                }
+            }
         }
-      }
     `
   )
 
@@ -34,11 +34,19 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: `personal website, full stack developer, Angular, Node.js, React, Java`
+        },
+        {
+          name: `robots`,
+          content: `index,follow`
         },
         {
           property: `og:title`,
@@ -58,7 +66,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: `@jayminpatel5`,
         },
         {
           name: `twitter:title`,
@@ -76,14 +84,7 @@ function Seo({ description, lang, meta, title }) {
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: `This is a personal website for Jaymin Patel. Jaymin Patel is a full stack developer.`,
 }
 
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
-export default Seo
+export default Seo;

@@ -1,0 +1,36 @@
+.a{
+    fill:url(#a);
+}
+.b{
+    fill:#fbbebe;
+}
+.c{
+     fill:#464353;
+ }
+.d,.i{
+    opacity:0.1;
+}
+.e{
+    fill:#6c63ff;
+}
+.f{
+    opacity:0.05;
+}
+.g{fill:#3f3d56;
+}
+.h{fill:#fff;
+}
+.j{
+    opacity:0.8;
+}
+.k{
+    fill:none;stroke:#3f3d56;
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+.l{
+    fill:#3acc6c;
+}
+.m{
+    fill:#ff6584;
+}
