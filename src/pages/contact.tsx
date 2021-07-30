@@ -103,9 +103,9 @@ const ContactPage: React.FC<ContactPagePropType> = ({data}) => {
               <h2 className="text-2xl my-4">Or Connect me On....</h2>
               <ul>
                 <li className="my-2">Email : <a className="hover:underline" href={'mailto:' + siteMetadata.email} target="_blank">{siteMetadata.email}</a></li>
-                <li className="my-2">Github : <a className="hover:underline" href={siteMetadata.github} target="_blank">{siteMetadata.github}</a></li>
-                <li className="my-2">Linkedin : <a  className="hover:underline"href={siteMetadata.linkedin} target="_blank">{siteMetadata.linkedin}</a></li>
-                <li className="my-2">Twitter : <a className="hover:underline" href={siteMetadata.twitter} target="_blank">{siteMetadata.twitter}</a></li>
+                <li className="my-2">Github : <a className="hover:underline" href={siteMetadata.github} target="_blank">Link</a></li>
+                <li className="my-2">Linkedin : <a  className="hover:underline"href={siteMetadata.linkedin} target="_blank">Link</a></li>
+                <li className="my-2">Twitter : <a className="hover:underline" href={siteMetadata.twitter} target="_blank">Link</a></li>
               </ul>
             </div>
           </div>

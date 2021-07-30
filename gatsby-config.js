@@ -2,6 +2,10 @@ require("dotenv").config({
 	path: '.env',
 })
 
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+const fullConfig = resolveConfig(tailwindConfig);
+
 module.exports = {
   siteMetadata: {
     title: `Jaymin Patel Site`,
@@ -28,17 +32,29 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jaymin Patel`,
+        short_name: `Jaymin Patel`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: fullConfig.theme.colors.primary[100],
+        theme_color: 'black',
         display: `minimal-ui`,
         icon: `src/assets/images/my-new-logo.png`, // This path is relative to the root of the site.
       },
     },
 
     `gatsby-plugin-gatsby-cloud`,
+		{
+			resolve: `gatsby-plugin-postcss`,
+			options: {
+				postCssPlugins: [
+					require(`tailwindcss`)(tailwindConfig),
+					require(`autoprefixer`),
+					...(process.env.NODE_ENV === `production`
+						? [require(`cssnano`)]
+						: []),
+				],
+			},
+		},
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {

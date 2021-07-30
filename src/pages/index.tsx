@@ -14,7 +14,7 @@ interface HomePagePropType {
 
 const HomePage: React.FC<HomePagePropType> = ({data}) => {
   return(
-    <PageTemplate siteTitle={'Home | Jaymin Patel'} data={data}>
+    <PageTemplate siteTitle={'Home'} data={data}>
       <section className="mt-3 section">
         <div className="grid grid-cols-12">
           <div className="index-grid-text-container animation-container">
