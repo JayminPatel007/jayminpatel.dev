@@ -15,7 +15,7 @@ const AboutPage: React.FC<AboutPagePropType> = ({data}) => {
   return(
     <PageLayout siteTitle={'about'} data={data}>
       <div className="half-container-animation">
-        <div className='half-container animation-container card block'>
+        <div className='half-container animation-container card block-container'>
           <div className='about-title main-name-title main-title'>
             <h1>About</h1>
           </div>

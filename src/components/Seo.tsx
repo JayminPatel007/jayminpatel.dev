@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 interface SEOPropType {
   description?: string;
   lang?: string;
-  meta?: string[];
+  meta: {name: string; content: any;}[];
   title: string;
 }
 
@@ -28,6 +28,7 @@ const Seo:React.FC<SEOPropType> = ({ description, lang, meta, title }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
+  // @ts-ignore
   return (
     <Helmet
       htmlAttributes={{

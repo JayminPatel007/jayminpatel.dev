@@ -60,37 +60,37 @@ const ContactPage: React.FC<ContactPagePropType> = ({data}) => {
   return (
     <PageLayout siteTitle={'contact'} data={data}>
       <div className="half-container-animation">
-        <div className="half-container animation-container card block">
+        <div className="half-container animation-container card block-container">
           <div className='about-title main-name-title main-title'>
             <h1>Contact me</h1>
           </div>
-          <div className="mt-4 contact-contain">
+          <div className="contact-container-mt contact-contain">
             <form onSubmit={onSubmit}>
-              <div className="grid grid-cols-2">
-                <div className="col-span-2 md:col-span-1 m-2">
-                  <label className="block text-sm font-medium">First Name</label>
-                  <input className="w-full mt-2" {...register("firstName", {required: true})}/>
+              <div className="contact-grid">
+                <div className="contact-field-fn">
+                  <label className="conact-field-label">First Name</label>
+                  <input className="contact-field-input" {...register("firstName", {required: true})}/>
                   {errors.firstName?.type === 'required' && <p className="error">* First name is required</p>}
                 </div>
-                <div className="col-span-2 md:col-span-1 m-2">
-                  <label className="block text-sm font-medium">Last Name</label>
-                  <input className="w-full mt-2" {...register("lastName", {required: true})}/>
+                <div className="contact-field-fn">
+                  <label className="conact-field-label">Last Name</label>
+                  <input className="contact-field-input" {...register("lastName", {required: true})}/>
                   {errors.lastName?.type === 'required' && <p className="error">* Last name is required</p>}
                 </div>
               </div>
-              <div className="m-2">
-                <label className="block text-sm font-medium">Email</label>
-                <input className="w-full mt-2" {...register("email", {required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}/>
+              <div className="margin-2">
+                <label className="conact-field-label">Email</label>
+                <input className="contact-field-input" {...register("email", {required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}/>
                 {errors.email?.type === 'required' && <p className="error">* Email is required</p>}
                 {errors.email?.type === 'pattern' && <p className="error">* Please enter valid email</p>}
               </div>
-              <div className="m-2 mt-4">
-                <label className="block text-sm font-medium">Message</label>
-                <textarea rows={4} className="w-full mt-2" {...register("descriptions", {required: true} )}/>
+              <div className="margin-2 margin-top-4">
+                <label className="conact-field-label">Message</label>
+                <textarea rows={4} className="contact-field-input" {...register("descriptions", {required: true} )}/>
                 {errors.descriptions?.type === 'required' && <p className="error">* Description is required</p>}
               </div>
-              <div className="flex justify-end m-2">
-                <button className="submit-button box-shadow" type="submit">Submit</button>
+              <div className="contact-submit-button-container">
+                <button className="submit-button" type="submit">Submit</button>
               </div>
             </form>
             {emailSentMessage === EmailEvent.SUCCESS && <div className="alert success">
@@ -100,12 +100,12 @@ const ContactPage: React.FC<ContactPagePropType> = ({data}) => {
               <h4>Something went Wrong!! Couldn't Send Email!</h4>
             </div>}
             <div>
-              <h2 className="text-2xl my-4">Or Connect me On....</h2>
+              <h2 className="och">Or Connect me On....</h2>
               <ul>
-                <li className="my-2">Email : <a className="hover:underline" href={'mailto:' + siteMetadata.email} target="_blank">{siteMetadata.email}</a></li>
-                <li className="my-2">Github : <a className="hover:underline" href={siteMetadata.github} target="_blank">Link</a></li>
-                <li className="my-2">Linkedin : <a  className="hover:underline"href={siteMetadata.linkedin} target="_blank">Link</a></li>
-                <li className="my-2">Twitter : <a className="hover:underline" href={siteMetadata.twitter} target="_blank">Link</a></li>
+                <li className="oc-li">Email : <a href={'mailto:' + siteMetadata.email} target="_blank">{siteMetadata.email}</a></li>
+                <li className="oc-li">Github : <a href={siteMetadata.github} target="_blank">Link</a></li>
+                <li className="oc-li">Linkedin : <a href={siteMetadata.linkedin} target="_blank">Link</a></li>
+                <li className="oc-li">Twitter : <a href={siteMetadata.twitter} target="_blank">Link</a></li>
               </ul>
             </div>
           </div>

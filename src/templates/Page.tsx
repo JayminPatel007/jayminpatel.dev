@@ -15,7 +15,7 @@ interface PageLayoutPropType {
 const PageLayout: React.FC<PageLayoutPropType> = ({siteTitle, children, data}) => {
 	return (
 		<div className="template-container">
-			<Seo title={siteTitle} />
+			<Seo title={siteTitle}  meta={[]}/>
 			<Header siteTitle={siteTitle} data={data}/>
 			<main className="template-main">
 				{children}

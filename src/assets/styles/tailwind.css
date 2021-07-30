@@ -236,6 +236,50 @@ a:hover {
 h3 {
     @apply text-2xl font-bold;
 }
-
+.contact-container-mt {
+    @apply mt-4;
+}
+.contact-grid {
+    @apply grid grid-cols-2;
+}
+.contact-field-fn {
+    @apply col-span-2 md:col-span-1 m-2;
+}
+.conact-field-label {
+    @apply block text-sm font-medium
+}
+.contact-field-input {
+    @apply w-full mt-2;
+}
+.margin-2 {
+    @apply m-2;
+}
+.margin-top-4 {
+    @apply mt-4;
+}
+.contact-submit-button-container {
+    @apply flex justify-end m-2;
+}
+.oc-li {
+    @apply my-2;
+}
+.oc-li a {
+    @apply hover:underline;
+}
+.och {
+    @apply text-2xl my-4;
+}
+.block-container {
+    @apply block;
+}
+.margin-top-3 {
+    @apply mt-3;
+}
+.home-page-grid-container {
+    @apply grid grid-cols-12
+}
+.blog-image {
+    @apply w-full;
+}
 @tailwind components;
 @tailwind utilities;

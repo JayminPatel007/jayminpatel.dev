@@ -24,7 +24,7 @@ const BlogPostLayout: React.FC<Data<any>> = ({data}) => {
           </div>
         </header>
         <figure className="blog-figure">
-          <img src={data.markdownRemark.frontmatter.titleImage.childImageSharp.original.src} alt="blog title image" />
+          <img className="blog-image" src={data.markdownRemark.frontmatter.titleImage.childImageSharp.original.src} alt="blog title image" />
           <div className="image-credit">
             <p>Photo By <a href={data.markdownRemark.frontmatter.creditLink}>{data.markdownRemark.frontmatter.creditName}</a></p>
           </div>
