@@ -25,7 +25,7 @@ const Header: React.FC<HeaderPropType> = ({ siteTitle, data}) => {
       <nav className='nav-sm'>
         <div className='nav-sm-flex-container'>
           <h1><Link to='/'>Jaymin Patel</Link></h1>
-          <div onClick={handleToggleMenu}>
+          <div style={{width: '24px'}} onClick={handleToggleMenu}>
             <HamburgerSVG />
           </div>
         </div>
